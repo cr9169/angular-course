@@ -1,6 +1,13 @@
 <div class="course-card">
   <div class="course-title">{{ cardIndex }} {{ course.description }}</div>
+
+  @if(course.id === 1) {
+  <h2>This is course number 1!</h2>
+  } @else if(course.iconUrl) {
   <img width="300" alt="Angular Logo" [src]="course.iconUrl" />
+  } @else {
+  <h2>No image avaliable...</h2>
+  }
 
   <div class="course-description">
     {{ course.longDescription }}

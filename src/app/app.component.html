@@ -2,21 +2,22 @@
   <img
     class="logo"
     src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png"
-    />
-  </div>
+  />
+</div>
 
-  <div class="courses">
-    @for (
-      course of courses; track
-      course; let i = $index; let isFirst = $first; let isLast = $last; let isEven = $even; let isOdd = $odd) {
-      <course-card
-        [class.is-first]="isFirst"
-        [class.is-last]="isLast"
-        [class.is-even]="isEven"
-        [class.is-odd]="isOdd"
-        (courseSelected)="onCourseSelected($event)"
-        [course]="course"
-        [cardIndex]="i + 1"
-        />
-    }
-  </div>
+<div class="courses">
+  @for ( course of courses; track course; let i = $index; let isFirst = $first;
+  let isLast = $last; let isEven = $even; let isOdd = $odd) {
+  <course-card
+    [class.is-first]="isFirst"
+    [class.is-last]="isLast"
+    [class.is-even]="isEven"
+    [class.is-odd]="isOdd"
+    (courseSelected)="onCourseSelected($event)"
+    [course]="course"
+    [cardIndex]="i + 1"
+  />
+  } @empty {
+  <h1>There are no courses...</h1>
+  }
+</div>
