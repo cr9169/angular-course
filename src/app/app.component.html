@@ -5,8 +5,9 @@
   />
 </div>
 
-<div class="courses">
+<div class="courses" #container>
   <course-card
+    #cardRef
     (courseSelected)="onCourseSelected($event)"
     [course]="courses[0]"
   />
