@@ -33,4 +33,10 @@ export class CourseCardComponent {
   cardClasses() {
     if (this.course.category === "BEGINNER") return "beginner";
   }
+
+  cardTitleStyles() {
+    return {
+      backgroundImage: `url(${this.course.iconUrl})`,
+    };
+  }
 }
