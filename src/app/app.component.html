@@ -5,27 +5,9 @@
   />
 </div>
 
-<div *ngFor="let pair of course | keyvalue">
-  {{ pair.key }}: {{ pair.value }}
-</div>
-
-{{ courses | json }}
-
-<div class="demo">
-  <div>Start date: {{ startDate | date : "MMM dd yyyy" }}</div>
-  <div>{{ title | titlecase }}</div>
-  <div>{{ price | currency : "EUR" }}</div>
-  <div>{{ rate | percent }}</div>
-</div>
-
 <div class="courses">
-  @for ( course of courses | slice:0:2; track course; let i = $index;) {
   <course-card
     (courseSelected)="onCourseSelected($event)"
-    [course]="course"
-    [cardIndex]="i + 1"
+    [course]="courses[0]"
   />
-  } @empty {
-  <h1>There are no courses...</h1>
-  }
 </div>

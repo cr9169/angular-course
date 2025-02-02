@@ -1,6 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import { COURSES } from "../db-data";
 import { Course } from "./model/course";
+import { CourseCardComponent } from "./course-card/course-card.component";
 
 @Component({
   selector: "app-root",
@@ -11,17 +12,10 @@ import { Course } from "./model/course";
 export class AppComponent {
   courses = COURSES;
 
-  title = COURSES[0].description;
-
-  price = 9.99234234;
-
-  rate = 0.67;
-
-  course = COURSES[0];
-
-  startDate = new Date(2000, 0, 1);
+  @ViewChild(CourseCardComponent)
+  card: CourseCardComponent;
 
   onCourseSelected(course: Course) {
-    console.log("App component - click event: ", course);
+    console.log(this.card);
   }
 }
