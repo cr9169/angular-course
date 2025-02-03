@@ -5,11 +5,6 @@
       {{ cardIndex || "" }} {{ course.description }}
     </div>
 
-    <ng-template #blankImage>
-      <p class="warn">{{ course.description }} has no image yet...</p>
-      <img src="/assets/empty-image.png" alt="" />
-    </ng-template>
-
     <ng-content
       select="course-image"
       *ngIf="course.iconUrl; else blankImage"
