@@ -5,18 +5,23 @@
   />
 </div>
 
-<div class="courses" *ngIf="courses[0] as course">
-  <course-card
-    highlighted
-    #highlighter="hl"
-    (courseSelected)="onToggle($event)"
-    (courseSelected)="onCourseSelected($event)"
-    [course]="course"
-  >
-    <course-image [src]="course.iconUrl"></course-image>
+<ng-template [ngIf]="courses[0]" let-course>
+  <div class="courses">
+    <course-card
+      highlighted
+      #highlighter="hl"
+      (courseSelected)="onToggle($event)"
+      (courseSelected)="onCourseSelected($event)"
+      [course]="course"
+    >
+      <course-image
+        [src]="course.iconUrl"
+        *ngxUnless="!course.iconUrl"
+      ></course-image>
 
-    <div class="course-description" (dblclick)="highlighter.toggle()">
-      {{ course.longDescription }}
-    </div>
-  </course-card>
-</div>
+      <div class="course-description" (dblclick)="highlighter.toggle()">
+        {{ course.longDescription }}
+      </div>
+    </course-card>
+  </div>
+</ng-template>
