@@ -9,6 +9,7 @@ import {
   OnInit,
   Output,
   QueryList,
+  TemplateRef,
   ViewChild,
 } from "@angular/core";
 import { Course } from "../model/course";
@@ -26,6 +27,9 @@ export class CourseCardComponent
 {
   @Input({})
   course: Course;
+
+  @Input()
+  noImageTpl: TemplateRef<any>;
 
   @Output("courseSelected")
   courseEmitter = new EventEmitter<Course>();
