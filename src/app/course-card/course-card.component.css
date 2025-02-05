@@ -1,6 +1,7 @@
-
-.course-card.beginner {
-    background: lightsalmon;
+:host {
+  display: block;
 }
 
-
+.course-card.beginner {
+  background: lightsalmon;
+}
